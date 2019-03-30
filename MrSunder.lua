@@ -8,7 +8,7 @@ MrSunderBarXPadding = 0;
 MrSunderLastFail = 0;
 MrSunderLastCast = 0;
 MrSunderLastCastTarget = "";
---MrSunderSpellID = 0;
+MrSunderSpellID = 0;
 MrSunder = {};
 MrSunder.Events = {
   "CHAT_MSG_SPELL_SELF_DAMAGE",
@@ -20,9 +20,6 @@ MrSunder.Events = {
 function MrSunder_OnLoad()
   MrSunder_ToggleEvents(true);
   local _, englishClass = UnitClass("player");
-  if(englishClass == "WARRIOR") then
-    MrSunderSpellID = MrSunder_SetSpellID();
-  end
 end
 
 function MrSunder_OnEvent()
@@ -69,6 +66,9 @@ function MrSunder_ToggleEvents(bool)
 end
 
 function MrSunder_SetSpellID()
+  if(MrSunderSpellID ~= 0) then
+    return
+  end
   local i = 1
   while true do
    local spellName = GetSpellName(i, "spell")
@@ -85,6 +85,7 @@ end
 
 function MrSunder_CastSunder()
   CastSpellByName("Sunder Armor");
+  MrSunder_SetSpellID();
   local start, _ = GetSpellCooldown(MrSunderSpellID, "spell");
   if(GetTime() - start == 0) then
     MrSunderLastCast = GetTime();
