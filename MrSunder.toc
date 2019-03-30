@@ -1,0 +1,11 @@
+## Interface: 11200
+## Title: MrSunder
+## Version: 1.0.0
+## Notes: Sunder tracking addon by Retherz.
+## DefaultState: enabled
+## Author: Retherz
+
+MrSunder.xml
+MrSunderBars.lua
+Utility.lua
+MrSunder.lua
