@@ -41,7 +41,6 @@ function MrSunder_OnEvent()
       end
       --create / refresh bar as a sunder stack has been applied
       local a,b = MrSunder_StringSplit(arg1, " is afflicted");
-        DebugMessage(a);
       MrSunder_Populate(a, GetTime());
     end
     if(MrSunderLastCast - MrSunderLastFail < 0) then
