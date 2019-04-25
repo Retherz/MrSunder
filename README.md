@@ -1,4 +1,7 @@
 # MrSunder
+# ABANDONED FOR https://github.com/Retherz/RetherzTargetTracker
+
+
 MrSunder - Vanilla WoW 1.12 Sunder Tracking
 ![preview](https://i.imgur.com/vVf6H6D.png)
 
